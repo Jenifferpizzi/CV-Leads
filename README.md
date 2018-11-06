@@ -1,6 +1,6 @@
 # API de Leads - v1.3
 ## Contrutor de Vendas - CV18
-Time Qualidade - 06 de novembro de 2018
+06 de novembro de 2018
 
 # 1 INTRODUÇÃO
 
