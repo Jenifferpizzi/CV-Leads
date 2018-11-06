@@ -106,3 +106,58 @@ A cadeia de implicações de um lead não existe.
     "permitir_alteracao": "true"   
 }
 ```
+
+## 2.3 Resposta (mensagem de sucesso)
+| Nome | Descrição | Tipo | Obrg. | Tam. | Observação |
+| ------ | ---------- | ------ | -- | -- | ------ |
+Sucesso ("sucesso") | Retorna se a ação de “cadastrar” ou “alterar” foi efetuada com sucesso ou não. | String |  | 10 | Opções - “True” / “False”. |
+Lead ("id") | Retorna o lead (ID) que foi cadastrado ou alterado. | Integer |  | 10
+Imobiliária ("idimobiliaria") | Retorna a imobiliária (ID) do lead cadastrado ou alterado. | Integer |  | 10 | No caso de uma requisição enviada pelo módulo “gestor”. |
+Corretor ("idcorretor") | Retorna o corretor (ID) do lead cadastrado ou alterado. | Integer |  | 10 | No caso de uma requisição enviada pelo módulo “gestor” ou “imobiliária”. |
+Situação ("idsituacao") | Retorna a situação (ID) do lead cadastrado ou alterado. | Integer |  | 10 |
+Mensagem ("mensagem") | Retorna a ação que foi efetuado no lead. | String |  | 100 | Opções - “cadastrou_sucesso” / “modificou_sucesso”.
+Código ("codigo") | Retorna o response code referente ao resultado da ação efetuada no lead. | Integer |  | 3 |
+
+**Exemplo:**
+```sh
+{   
+    "sucesso": true,
+    "id": 82,
+    "idimobiliaria": "2",
+    "idcorretor": "4",
+    "idsituacao": "3",
+    "mensagem": "cadastrou_sucesso",
+    "codigo": 200  
+}
+```
+
+# 3 ESPECIFICAÇÕES DAS AÇÕES
+
+## 3.1 Situação
+Ao cadastrar um novo lead é verificado se o JSON da requisição possui o campo “idsituacao” preenchido: (1) caso o valor seja nulo, a situação do lead deve ser cadastrada como “início”; (2) caso o valor seja diferente de nulo, a situação do lead deve ser cadastrada com o novo valor enviado; (3) caso não possua um valor, segue para a verificação do próximo campo.
+
+Ao editar um lead é verificado se o JSON da requisição possui o campo “idsituacao” preenchido: (1) caso o valor seja nulo e a situação atual do lead seja “inativo”, então a situação do lead deve ser modificada para “início”; (2) caso o valor seja diferente de nulo, a situação do lead deve ser modificada para o novo valor enviado; (3) caso não possua um valor, segue para a verificação do próximo campo.
+
+## 3.2 Empreendimentos
+Ao cadastrar um novo lead ou editar um lead existente é verificado se o JSON da requisição possui o campo “idempreendimento” preenchido: (1) caso existe um ou mais valores, adiciona ao lead apenas os valores que estiverem ativos tanto no banco de dados quanto no painel; (2) caso não possua um valor, segue para a verificação do próximo campo.
+
+## 3.3 Responsável
+Ao cadastrar um novo lead ou editar um lead existente é verificado se o JSON da requisição possui o campo “idimobiliaria” ou “idcorretor” preenchido: (1.1) caso a requisição tenha sido enviada pelo módulo “gestor”, se a imobiliária estiver vinculada a alguma empreendimento, adiciona a nova imobiliária ao lead; (1.2) caso a requisição tenha sido enviada pelo módulo “gestor”, se o corretor estiver vinculado a alguma imobiliária de algum empreendimento, adiciona o novo corretor ao lead; (2) caso a requisição tenha sido enviada pelo módulo “imobiliária”, se o corretor estiver vinculado a alguma imobiliária de algum empreendimento, adiciona o novo corretor ao lead; (3) caso não possua um valor, segue para a verificação do próximo campo.
+
+## 3.4 Proposta
+Ao cadastrar um novo lead ou editar um lead existente é verificado se o e-mail ou o telefone no JSON da requisição possui alguma proposta (reserva) vinculada. Caso exista uma ou mais propostas e sua situação seja diferente de (1) vendida; (2) distratada; (3) cancelada; ou (4) vencida, essa(s) proposta(s) deve(m) ser vinculada(s) ao lead.
+
+## 3.5 Origem
+Ao cadastrar um lead: (1) caso seja enviado o campo “origem” no JSON da requisição, ele será cadastrado como a origem do lead; (2) caso não exista uma “origem” no JSON da requisição, a origem do lead deve ser o padrão do sistema (o valor do campo “módulo”).
+
+Desta forma, a “origem” de um lead sempre será preenchida de alguma forma. A origem de um lead é única e não pode ser editada.
+
+Ao editar um lead, caso seja enviado o campo “origem” no JSON da requisição, ele deve ser tratado como a origem de uma conversão.
+
+## 3.6 Conversão
+Ao cadastrar um lead, uma “conversão” pode ser enviada no JSON da requisição: (1) caso seja enviada uma “conversão”, sua origem será a mesma origem do lead; (2) caso seja enviada uma “conversão” que ainda não exista no sistema, ela será cadastrada.
+
+Ao editar um lead, uma “conversão” pode ser enviada no JSON da requisição: (1) caso seja enviado um campo “conversão” e um campo “origem”, essa origem deve ser tratada como a origem da conversão; (2) caso seja enviada uma “conversão” sem uma “origem”, essa “conversão” terá sua “origem” como “Não definida”.
+
+## 3.7 Interações
+Ao cadastrar um novo lead ou editar um lead existente é verificado se o JSON da requisição possui o campo “interacoes” preenchido: (1) caso existe um ou mais valores, adiciona ao lead os valores de “tipo” e “descricao” de cada um dos índices; (2) caso não possua um valor, segue para a verificação do próximo campo.
