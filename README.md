@@ -54,7 +54,7 @@ A cadeia de implicações de um lead não existe.
 | Facebook ("facebook") | Informa perfil da rede social do cliente ou associado. | String | Não | 100 |
 | Twitter ("twitter") | Informa perfil da rede social do cliente ou associado. | String | Não | 100 |
 | Instagram ("instagram") | Informa perfil da rede social do cliente ou associado. | String | Não | 100 |
-| Avatar ("url_avatar") | Fornece a foto ou logo do cliente. | String | não | 100 | Enviado através de URL ou arquivo (caminho).
+| Avatar ("url_avatar") | Fornece a foto ou logo do cliente do lead. | String | não | 100 | Enviado através de URL.
 | Empreendimento ("idempreendimento") | Informa o(s) empreendimento(s) de interesse do lead. | Integer | Não | 10 | Pode ser enviado apenas um ID ou um array contendo vários IDs.
 | Situação ("idsituacao") | Informa a situação (ID) do lead. | Integer | Não | 10 |
 | Imobiliária ("idimobiliaria") | Informa a situação (ID) do lead. | Integer | Não | 10 | No caso de uma requisição enviada pelo módulo “gestor”.
