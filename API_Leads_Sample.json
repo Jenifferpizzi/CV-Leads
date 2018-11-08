@@ -1,0 +1,39 @@
+{   
+    "acao": "salvar_editar",
+    "nome": "Nilda Orlando",
+    "email": "nildaorlando@gmail.com",
+    "telefone": "79999778877",
+    "modulo": "gestor",
+    "facebook": "https://pt-br.facebook.com/alfamaweb/",
+    "twitter": "https://twitter.com/alfamaweb",
+    "instagram": "https://www.instagram.com/alfamaweb",
+    "url_avatar": "https://alfamaweb.com.br/assets/img/logo_alfama.png",
+    "idempreendimento": 
+    {
+        "0":5, 
+        "1":30
+    },
+    "idsituacao": "1",
+    "origem": "FB",
+    "conversao": "Vendas 2018.2",
+    "idimobiliaria": "3",
+    "idcorretor": "87",
+    "campos_adicionais": 
+    {
+        "possui_imoveis": "Sim"
+    },
+    "interacoes": 
+    {
+        "0": 
+        { 
+            "tipo" : "L",
+            "descricao" : "Ligar para Alfred Ramos"
+        },
+        "1": 
+        { 
+            "tipo" : "W",
+            "descricao" : "Teste de mensagem pelo WhatsApp"
+        }
+    },
+    "permitir_alteracao": "true"   
+}
