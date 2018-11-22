@@ -1,5 +1,5 @@
-# API de Leads - v1.3
-06 de novembro de 2018
+# API de Leads - v1.5
+21 de novembro de 2018
 ## Contrutor de Vendas - CV18
 
 # 1 INTRODUÇÃO
