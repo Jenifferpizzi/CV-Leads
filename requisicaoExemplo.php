@@ -1,7 +1,7 @@
 <?php
 
 $usuario = '[SEU_EMAIL]';
-$senha = '[SUA_SENHA]';
+$hash_senha = '[HASH_DA_SUA_SENHA]';
 $url = '[URL_DO_SEU_CONSTRUTOR]/api/cvio/lead';
 
 $dadosLead = array(
@@ -20,7 +20,7 @@ $dadosLead = json_encode($dadosLead);
 
 $cabecalho = array(
 	'email: ' . $usuario,
-	'senha: ' . $senha,
+	'cvhash: ' . $hash_senha,
 	'Content-Type: application/json',
 	'Content-Length: ' . strlen($dadosLead)
 );
