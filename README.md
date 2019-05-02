@@ -33,13 +33,13 @@ Um lead não influencia nenhuma cadeia de funcionalidades.
 | Nome | Descrição | Tipo | Obrg. | Tam. |
 | ------ | ------ | ------ | ------ | ------ |
 | E-mail ("email") | Informa o endereço de e-mail de login do usuário que executa a requisição (módulo). | String | Sim | 100 |
-| Senha ("senha") | Informa a senha de login do usuário que executa a requisição (módulo). | String | Sim | 100 |
+| CVHash ("cvhash") | Informa o hash da senha de login do usuário que executa a requisição (módulo). | String | Sim | 100 |
 
 **Exemplo:**
 ```sh
 {  
     "email": "cvio@construtordevendas.com.br",
-    "senha": "12345678"   
+    "cvhash": "c12da5e549e9738a0d54572938ee4f841ca7a69b16dc3e6f7c052e23ce34f81d7062c8c6b6d7b9e38b8deebe2a1e72238044b2d0"   
 }
 ```
 
