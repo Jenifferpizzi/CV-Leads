@@ -9,7 +9,6 @@ A interface viabiliza o cadastro e a modificação de leads para o sistema CV. A
 
 O cadastro pode ser proveniente do: (1) sistema CV - cadastro ou importação; (2) site do cliente; (3) integrações - RD Station, Facebook, Contako.
 
-**Informação Importante:**
 **Link para API:** https://[subdominio-cliente].construtordevendas.com.br/api/cvio/lead
 
 ## 1.2 Usuários
