@@ -1,6 +1,6 @@
-# API de Leads - v1.5
-21 de novembro de 2018
-## Contrutor de Vendas - CV18
+# API de Leads - v6.0
+20 de Fevereiro de 2019
+## Contrutor de Vendas - CV19
 
 # 1 INTRODUÇÃO
 
@@ -8,6 +8,9 @@
 A interface viabiliza o cadastro e a modificação de leads para o sistema CV. As ações são executadas através do envio de um JSON, referente à requisição, contendo os dados dos campos a serem cadastrados ou modificados.
 
 O cadastro pode ser proveniente do: (1) sistema CV - cadastro ou importação; (2) site do cliente; (3) integrações - RD Station, Facebook, Contako.
+
+**Informação Importante:**
+**Link para API:** https://[subdominio-cliente].construtordevendas.com.br/api/cvio/lead
 
 ## 1.2 Usuários
 Os tipos de usuário que podem enviar requisições são:
@@ -33,13 +36,13 @@ Um lead não influencia nenhuma cadeia de funcionalidades.
 | Nome | Descrição | Tipo | Obrg. | Tam. |
 | ------ | ------ | ------ | ------ | ------ |
 | E-mail ("email") | Informa o endereço de e-mail de login do usuário que executa a requisição (módulo). | String | Sim | 100 |
-| CVHash ("cvhash") | Informa o hash da senha de login do usuário que executa a requisição (módulo). | String | Sim | 100 |
+| Token ("token") | Informa o token ativo do usuário que executa a requisição (módulo). | String | Sim | 128 |
 
 **Exemplo:**
 ```sh
 {  
-    "email": "cvio@construtordevendas.com.br",
-    "cvhash": "c12da5e549e9738a0d54572938ee4f841ca7a69b16dc3e6f7c052e23ce34f81d7062c8c6b6d7b9e38b8deebe2a1e72238044b2d0"   
+    "email": "integracao@construtordevendas.com.br",
+    "token": "2ed820f89afa16cabb6f1585f9a85b4e6bfc80c3"   
 }
 ```
 
