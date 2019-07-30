@@ -52,23 +52,25 @@ Um lead não influencia nenhuma cadeia de funcionalidades.
 | Nome ("nome") | Informa o nome do cliente do lead. | String | Sim | 100 |
 | E-mail ("email") | Informa o endereço de e-mail cadastrado no lead. | String | Sim | 100 |
 | Telefone ("telefone") | Informa o número de telefone cadastrado no lead. | String | Não | 15 | Restrição numérica e máscara para campo de telefone.
-| Módulo ("modulo") | Informa o módulo que envia a requisição. | String | Sim | 100 | Opções - “gestor” / “imobiliaria” / “corretor”.
 | Facebook ("facebook") | Informa perfil da rede social do cliente ou associado. | String | Não | 100 |
 | Twitter ("twitter") | Informa perfil da rede social do cliente ou associado. | String | Não | 100 |
 | Instagram ("instagram") | Informa perfil da rede social do cliente ou associado. | String | Não | 100 |
 | Avatar ("url_avatar") | Fornece a foto ou logo do cliente do lead. | String | não | 100 | Enviado através de URL.
 | Empreendimento ("idempreendimento") | Informa o(s) empreendimento(s) de interesse do lead. | Integer | Não | 10 | Pode ser enviado apenas um ID ou um array contendo vários IDs.
 | Ponto de Venda ("idpdv") | Informa o ponto de venda associado ao lead. | Integer | Não | 10 | Pode ser enviado apenas um ID.
-| Imobiliária ("idimobiliaria") | Informa a imobiliária (ID) que será vinculada ao lead. | Integer | Não | 10 | No caso de uma requisição enviada pelo módulo “gestor”.
-| Corretor ("idcoretor") | Informa o corretor (ID) que será vinculado ao lead. | Integer | Não | 10 | No caso de uma requisição enviada pelo módulo “gestor” ou "imobiliaria".
+| Imobiliária ("idimobiliaria") | Informa a imobiliária (ID) que será vinculada ao lead. | Integer | Não | 10 | 
+| Data de Associação da Imobiliária ("data_associacao_imobiliaria") | Informa a data em que a imobiliária foi vinculada ao lead. | Datetime | Não | - | 
+| Corretor ("idcoretor") | Informa o corretor (ID) que será vinculado ao lead. | Integer | Não | 10 | 
+| Data de Associação do Corretor ("data_associacao_corretor") | Informa a data em que o corretor foi vinculado ao lead. | Datetime | Não | - | 
 | Situação ("idsituacao") | Informa a situação (ID) do lead. | Integer | Não | 10 |
+| Responsável ("idusuario") | Informa o usuário administrativo que será vinculado ao lead como responsável. | Integer | Não | 10 | 
 | Origem ("origem") | Informa a origem (ID) do lead. | String | Não | 2 | Opções - "ND" - Não Definido / "GE" - Painel Gestor / "CO" - Painel Corretor / "IM" - Painel Imobiliária / "FB" - Facebook Ads / "SI" - WebSite / "GO' - Google / "CH" - Chat Online / "TD" - Tráfego Direto / "MP" - Mídia Paga / "BO" - Busca Orgânica / "EM" - Email / "RF" - Referência / "SC" - Social / "DP" - Display / "OP" - Outras publicidades / "OU" - Outros / "UK" - Desconhecido. Caso não seja enviado no JSON da requisição, recebe o valor padrão do sistema (o valor do campo “modulo”).
+| Data do Vencimento ("data_vencimento") | Informa a data de vencimento do lead de acordo com a situação atual. | Datetime | Não | 0 | Deve ser enviado no formato BR.
 | Conversão ("conversao") | Informa o nome da fonte de uma nova entrada de um lead existente. | String | Não | 100 |
 | Data da Conversão ("data_cad_conversao") | Informa a data que a conversão do lead foi cadastrada. | Datetime | Não | 0 | Deve ser enviado no formato BR.
 | Campos Adicionais ("campos_adicionais") | Informa o(s) campo(s) extra(s) e seu(s) respectivo(s) valor(es), cadastrado(s) por uma construtora. | String / Text | Não | 100 |
 | Interações ("interacoes") | Informa as interações (anotação, ligação, e-mail, SMS, WhatsApp) que foram efetuadas no lead. | String / Text | Não | 1 / 0 | Array de arrays contendo os campos “tipo” e “descricao” para cada interação. Opções - “A” (anotação) / “L” (ligação) / “E” (e-mail) / “S” (SMS) / “W” (WhatsApp).
 | Permissão de Alteração ("permitir_alteracao") | Informa se o lead pode ou não ser alterado. | String | Sim | 10 | Opções - "True" / "False"
-| Permissão para consultar o CVInfo ("nao_consultar_cvinfo") | Informa se haverá ou não consulta no CVInfo. | String | Sim | 10 | Opções - "True" / "False"
 
 **Exemplo:**
 ```sh
