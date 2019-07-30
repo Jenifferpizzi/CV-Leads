@@ -1,5 +1,5 @@
 # API de Leads - v6.0
-20 de Fevereiro de 2019
+30 de Julho de 2019
 ## Contrutor de Vendas - CV19
 
 # 1 INTRODUÇÃO
