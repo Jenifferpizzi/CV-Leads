@@ -74,11 +74,10 @@ Um lead não influencia nenhuma cadeia de funcionalidades.
 **Exemplo:**
 ```sh
 {   
-    "acao": "salvar_editar",
+    "acao": "salvar",
     "nome": "Nivaldo Oliva II",
     "email": "nivaldoolivasegundo@gmail.com",
     "telefone": "(79) 98833-0011",
-    "modulo": "gestor",
     "facebook": "https://pt-br.facebook.com/alfamaweb/",
     "twitter": "https://twitter.com/alfamaweb",
     "instagram": "https://www.instagram.com/alfamaweb",
@@ -89,8 +88,11 @@ Um lead não influencia nenhuma cadeia de funcionalidades.
     },
     "idpdv": "1",
     "idimobiliaria": "3",
+    "data_associacao_imobiliaria": "01/02/2019",
     "idcorretor": "87",
+    "data_associacao_corretor": "01/02/2019",
     "idsituacao": "1",
+    "idusuario": "1",
     "origem": "FB",
     "conversao": "Campanha 2018.10.31",
     "data_cad_conversao": "08/11/2018",
@@ -110,9 +112,7 @@ Um lead não influencia nenhuma cadeia de funcionalidades.
             "tipo" : "W",
             "descricao" : "Teste de mensagem pelo WhatsApp"
         }
-    },
-    "permitir_alteracao": "true",
-    "nao_consultar_cvinfo": "true"
+    }
 }
 ```
 
