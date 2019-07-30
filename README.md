@@ -70,7 +70,6 @@ Um lead não influencia nenhuma cadeia de funcionalidades.
 | Data da Conversão ("data_cad_conversao") | Informa a data que a conversão do lead foi cadastrada. | Datetime | Não | 0 | Deve ser enviado no formato BR.
 | Campos Adicionais ("campos_adicionais") | Informa o(s) campo(s) extra(s) e seu(s) respectivo(s) valor(es), cadastrado(s) por uma construtora. | String / Text | Não | 100 |
 | Interações ("interacoes") | Informa as interações (anotação, ligação, e-mail, SMS, WhatsApp) que foram efetuadas no lead. | String / Text | Não | 1 / 0 | Array de arrays contendo os campos “tipo” e “descricao” para cada interação. Opções - “A” (anotação) / “L” (ligação) / “E” (e-mail) / “S” (SMS) / “W” (WhatsApp).
-| Permissão de Alteração ("permitir_alteracao") | Informa se o lead pode ou não ser alterado. | String | Sim | 10 | Opções - "True" / "False"
 
 **Exemplo:**
 ```sh
