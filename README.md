@@ -65,6 +65,7 @@ Um lead não influencia nenhuma cadeia de funcionalidades.
 | Situação ("idsituacao") | Informa a situação (ID) do lead. | Integer | Não | 10 |
 | Responsável ("idusuario") | Informa o usuário administrativo que será vinculado ao lead como responsável. | Integer | Não | 10 | 
 | Origem ("origem") | Informa a origem (ID) do lead. | String | Não | 2 | Opções - "ND" - Não Definido / "GE" - Painel Gestor / "CO" - Painel Corretor / "IM" - Painel Imobiliária / "FB" - Facebook Ads / "SI" - WebSite / "GO' - Google / "CH" - Chat Online / "TD" - Tráfego Direto / "MP" - Mídia Paga / "BO" - Busca Orgânica / "EM" - Email / "RF" - Referência / "SC" - Social / "DP" - Display / "OP" - Outras publicidades / "OU" - Outros / "UK" - Desconhecido. Caso não seja enviado no JSON da requisição, recebe o valor padrão do sistema (o valor do campo “modulo”).
+| Mídia ("midia") | Informa o código da mídia que está gerando o lead. | Integer | Não | 0 | Ex.: gpc, ads
 | Data do Vencimento ("data_vencimento") | Informa a data de vencimento do lead de acordo com a situação atual. | Datetime | Não | 0 | Deve ser enviado no formato BR.
 | Conversão ("conversao") | Informa o nome da fonte de uma nova entrada de um lead existente. | String | Não | 100 |
 | Data da Conversão ("data_cad_conversao") | Informa a data que a conversão do lead foi cadastrada. | Datetime | Não | 0 | Deve ser enviado no formato BR.
