@@ -95,7 +95,7 @@ Um lead não influencia nenhuma cadeia de funcionalidades.
     "idsituacao": "1",
     "idusuario": "1",
     "origem": "GO",
-    "midia": "ads",
+    *"midia": "ads",
     "conversao": "Campanha 2018.10.31",
     "data_cad_conversao": "08/11/2018",
     "campos_adicionais": 
@@ -124,8 +124,18 @@ Um lead não influencia nenhuma cadeia de funcionalidades.
 Sucesso ("sucesso") | Retorna se a ação de “cadastrar” ou “alterar” foi efetuada com sucesso ou não. | String |  | 10 | Opções - “True” / “False”. |
 Lead ("id") | Retorna o lead (ID) que foi cadastrado ou alterado. | Integer |  | 10
 Imobiliária ("idimobiliaria") | Retorna a imobiliária (ID) do lead cadastrado ou alterado. | Integer |  | 10 | No caso de uma requisição enviada pelo módulo “gestor”. |
-* Nome da Imobiliária ("imobiliaria_nome") | Retorna o nome imobiliária do lead cadastrado ou alterado. | String |  | 40 | Imobiliária do Lead |
+Nome da Imobiliária ("imobiliaria_nome") | Retorna o nome da imobiliária do lead cadastrado ou alterado. | String |  | 40 | Imobiliária do Lead |
+E-mail da Imobiliária ("imobiliaria_email") | Retorna o email da imobiliária do lead cadastrado ou alterado. | String |  | 40 | email@imobiliaria.com.br |
+Telefone da Imobiliária ("imobiliaria_telefone") | Retorna o telefone da imobiliária do lead cadastrado ou alterado. | String |  | 40 | (79) 99873-8818 |
 Corretor ("idcorretor") | Retorna o corretor (ID) do lead cadastrado ou alterado. | Integer |  | 10 | No caso de uma requisição enviada pelo módulo “gestor” ou “imobiliária”. |
+Referência do corretor ("corretor_referencia") | Retorna a referência do corretor do lead cadastrado ou alterado. | String |  | 40 | COR390 |
+Nome do corretor ("corretor_nome") | Retorna o nome do corretor do lead cadastrado ou alterado. | String |  | 40 | Corretor do Lead |
+E-mail do Corretor ("corretor_email") | Retorna o email do Corretor do lead cadastrado ou alterado. | String |  | 40 | email@corretor.com.br |
+Telefone do Corretor ("corretor_telefone") | Retorna o telefone do Corretor do lead cadastrado ou alterado. | String |  | 40 | (79) 99873-8818 |
+Usuário Gestor ("idusuario") | Retorna o usuario atendente (ID) do lead cadastrado ou alterado. | Integer |  | 10 | No caso de uma requisição enviada pelo módulo “gestor” ou “imobiliária”. |
+Nome do Usuário ("usuario_nome") | Retorna o nome do usuário do lead cadastrado ou alterado. | String |  | 40 | Usuário do Lead |
+E-mail do Usuário ("usuario_email") | Retorna o email do Usuário do lead cadastrado ou alterado. | String |  | 40 | email@usuario.com.br |
+Telefone do Usuário ("usuario_telefone") | Retorna o telefone do Usuário do lead cadastrado ou alterado. | String |  | 40 | (79) 99873-8818 |
 Situação ("idsituacao") | Retorna a situação (ID) do lead cadastrado ou alterado. | Integer |  | 10 |
 Mensagem ("mensagem") | Retorna a ação que foi efetuado no lead. | String |  | 100 | Opções - “cadastrou_sucesso” / “modificou_sucesso”.
 Código ("codigo") | Retorna o response code referente ao resultado da ação efetuada no lead. | Integer |  | 3 |
@@ -140,7 +150,7 @@ Código ("codigo") | Retorna o response code referente ao resultado da ação ef
     *"imobiliaria_email": "email@imobiliaria.com.br",
     *"imobiliaria_telefone": "(79) 998738818",
     "idcorretor": "4",
-    *"corretor_referencia": "Corretor do Lead",
+    *"corretor_referencia": "COR390",
     *"corretor_nome": "Corretor do Lead",
     *"corretor_email": "email@corretor.com.br",
     *"corretor_telefone": "(79) 998738818",
