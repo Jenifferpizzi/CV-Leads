@@ -94,7 +94,8 @@ Um lead não influencia nenhuma cadeia de funcionalidades.
     "data_associacao_corretor": "01/02/2019",
     "idsituacao": "1",
     "idusuario": "1",
-    "origem": "FB",
+    "origem": "GO",
+    "midia": "ads",
     "conversao": "Campanha 2018.10.31",
     "data_cad_conversao": "08/11/2018",
     "campos_adicionais": 
@@ -123,6 +124,7 @@ Um lead não influencia nenhuma cadeia de funcionalidades.
 Sucesso ("sucesso") | Retorna se a ação de “cadastrar” ou “alterar” foi efetuada com sucesso ou não. | String |  | 10 | Opções - “True” / “False”. |
 Lead ("id") | Retorna o lead (ID) que foi cadastrado ou alterado. | Integer |  | 10
 Imobiliária ("idimobiliaria") | Retorna a imobiliária (ID) do lead cadastrado ou alterado. | Integer |  | 10 | No caso de uma requisição enviada pelo módulo “gestor”. |
+* Nome da Imobiliária ("imobiliaria_nome") | Retorna o nome imobiliária do lead cadastrado ou alterado. | String |  | 40 | Imobiliária do Lead |
 Corretor ("idcorretor") | Retorna o corretor (ID) do lead cadastrado ou alterado. | Integer |  | 10 | No caso de uma requisição enviada pelo módulo “gestor” ou “imobiliária”. |
 Situação ("idsituacao") | Retorna a situação (ID) do lead cadastrado ou alterado. | Integer |  | 10 |
 Mensagem ("mensagem") | Retorna a ação que foi efetuado no lead. | String |  | 100 | Opções - “cadastrou_sucesso” / “modificou_sucesso”.
@@ -134,7 +136,18 @@ Código ("codigo") | Retorna o response code referente ao resultado da ação ef
     "sucesso": true,
     "id": 82,
     "idimobiliaria": "2",
+    *"imobiliaria_nome": "Imobiliária do Lead",
+    *"imobiliaria_email": "email@imobiliaria.com.br",
+    *"imobiliaria_telefone": "(79) 998738818",
     "idcorretor": "4",
+    *"corretor_referencia": "Corretor do Lead",
+    *"corretor_nome": "Corretor do Lead",
+    *"corretor_email": "email@corretor.com.br",
+    *"corretor_telefone": "(79) 998738818",
+    *"idusuario": "4",
+    *"usuario_nome": "Atendente do Lead",
+    *"usuario_email": "email@usuario.com.br",
+    *"usuario_telefone": "(79) 998738818",
     "idsituacao": "3",
     "mensagem": "cadastrou_sucesso",
     "codigo": 200  
