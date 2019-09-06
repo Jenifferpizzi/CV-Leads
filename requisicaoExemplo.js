@@ -1,10 +1,10 @@
 const fields = ['nome', 'email', 'telefone'];
 
 class cvLeads {
-  constructor(url, email, token){
-    this.url = url;
-    this.email = email;
-    this.token = token;
+  constructor(url, email, token) {
+    this.urlCV = url;
+    this.emailCV = email;
+    this.tokenCV = token;
     this.renderForm();
   }
   
@@ -21,7 +21,6 @@ class cvLeads {
        event.preventDefault();
        this.validateForm() ? this.submitForm() : false;
     });
-    
   }
   
   validateForm() {
@@ -40,22 +39,20 @@ class cvLeads {
   
   submitForm() {
     var form = new FormData(document.getElementById('cv-lead-form'));
-    var formData = {
-      "acao":"salvar_editar",
-      "permitir_alteracao":"true",
-    };
+    var formData = "urlCV=" + this.urlCV + "&emailCV=" + this.emailCV + "&tokenCV=" + this.tokenCV + "&";
     
-    form.forEach(function(value, key){
-      formData[key] = value;
-    });	   
+    form.forEach(function(value, key) {
+      formData += key + '=' + value + '&';
+    });
 
-    var data = JSON.stringify(formData);
+    console.log(formData);
+
+    // var data = JSON.stringify(formData);
+    var data = encodeURI(formData);
     var formRequest = new XMLHttpRequest();
 
-    formRequest.open('POST', this.url);
-    formRequest.setRequestHeader("Content-Type", "application/json");
-    formRequest.setRequestHeader("email", this.email);
-    formRequest.setRequestHeader("token", this.token);
+    formRequest.open('POST', 'https://apresentacao.realizacoes.com/cv-lead/cv-lead.php', true);
+    formRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     formRequest.send(data);
 	}
 }
