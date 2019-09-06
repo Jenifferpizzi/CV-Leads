@@ -9,12 +9,13 @@ class cvLeads {
   }
   
   renderForm() {
-    let form = `<form class="cv-lead-form" method="post" id="cv-lead-form">
-                  <input type="text" class="cv-lead-nome" name="nome" placeholder="Nome" required>
-                  <input type="email" class="cv-lead-email" name="email" placeholder="E-mail" required>
-                  <input type="tel" name="telefone" class="cv-lead-telefone" placeholder="Telefone" onkeyup="masc(this, mtel);" maxlength="15" required>
-                  <button class="cv-lead-submit" type="submit">Enviar</button>
-                </form>`;
+    let form = '<form class="cv-lead-form" method="post" id="cv-lead-form">'
+                  + '<input type="text" class="cv-lead-nome" name="nome" placeholder="Nome" required>'
+                  + '<input type="email" class="cv-lead-email" name="email" placeholder="E-mail" required>'
+                  + '<input type="tel" name="telefone" class="cv-lead-telefone" placeholder="Telefone" onkeyup="masc(this, mtel);" maxlength="15" required>' 
+                  + '<input type="tel" name="telefone" class="cv-lead-telefone" placeholder="Telefone" onkeyup="masc(this, mtel);" maxlength="15" required>'                 
+                  + '<button class="cv-lead-submit" type="submit">Enviar</button>' +
+                  '</form>';
 
     document.querySelector('#cv-leads').insertAdjacentHTML('beforeend', form);
     document.getElementById("cv-lead-form").addEventListener("submit", (event) => {
