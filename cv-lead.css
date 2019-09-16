@@ -1,0 +1,43 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	outline: 0;
+}
+body {
+	margin: 8px;
+}
+#cv-lead-form input {
+	display: block;
+	padding: .7em .8em;
+	border: 1px solid #ccc;
+	box-shadow: inset 0 1px 3px #ddd;
+	border-radius: 4px;
+	vertical-align: middle;
+}
+#cv-lead-form label {
+	font-size: 12px;
+	margin-bottom: 3px;
+	display: inline-block;
+}
+.item-form {
+	margin-top: .5em;
+}
+	#cv-lead-form button[type="submit"] {
+	font-family: inherit;
+	font-size: 100%;
+	padding: .5em 1em;
+	color: white;
+	border: 1px solid #999;
+	border: none transparent;
+	background-color: #409A75; /* coloque aqui a cor de background do botão */
+	text-decoration: none;
+	border-radius: 2px;
+	transition: 250ms ease-in-out;
+	outline: 0;
+	margin: .5em 0;
+	cursor: pointer;
+}
+#cv-lead-form button[type="submit"]:hover {	
+	opacity: 0.88;
+}
