@@ -10,21 +10,21 @@ class cvLeads {
   }
   
   renderForm() {
-    let form = '<form class="cv-lead-form" method="post" id="cv-lead-form">'
-                  + '<div class="item-form">'
-                  + '<label for="nome">Nome</label>'
-                  + '<input type="text" class="cv-lead-nome" name="nome" placeholder="Nome" required>'
-                  + '</div>'
-                  + '<div class="item-form">'
-                  + '<label for="email">E-mail</label>'
-                  + '<input type="email" class="cv-lead-email" name="email" placeholder="E-mail" required>'
-                  + '</div>'
-                  + '<div class="item-form">'
-                  + '<label for="telefone">Telefone</label>'
-                  + '<input type="tel" name="telefone" class="cv-lead-telefone" placeholder="Telefone" onkeyup="masc(this, mtel);" maxlength="15" required>'
-                  + '</div>'                
-                  + '<button class="cv-lead-submit" type="submit">Enviar</button>'
-                  + '</form>';
+    let form = `<form class="cv-lead-form" method="post" id="cv-lead-form">
+                  <div class="item-form">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="cv-lead-nome" name="nome" placeholder="Nome" required>
+                  </div>
+                    <div class="item-form">
+                    <label for="email">E-mail</label>
+                    <input type="email" class="cv-lead-email" name="email" placeholder="E-mail" required>
+                  </div>
+                  <div class="item-form">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" name="telefone" class="cv-lead-telefone" placeholder="Telefone" onkeyup="masc(this, mtel);" maxlength="15" required>
+                  </div>        
+                  <button class="cv-lead-submit" type="submit">Enviar</button>
+                </form>`;
 
     document.querySelector('#cv-leads').insertAdjacentHTML('beforeend', form);
     document.querySelector("#cv-lead-form").addEventListener("submit", (event) => {
@@ -137,6 +137,8 @@ function formatOrigin(origin) {
  }
 
 
+let v_obj;
+let v_fun;
 
 function masc(o,f) {
   v_obj=o;
