@@ -1,12 +1,3 @@
-* {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-	outline: 0;
-}
-body {
-	margin: 8px;
-}
 #cv-lead-form input {
 	display: block;
 	padding: .7em .8em;
