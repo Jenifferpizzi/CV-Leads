@@ -60,7 +60,7 @@ Um lead não influencia nenhuma cadeia de funcionalidades.
 | Ponto de Venda ("idpdv") | Informa o ponto de venda associado ao lead. | Integer | Não | 10 | Pode ser enviado apenas um ID.
 | Imobiliária ("idimobiliaria") | Informa a imobiliária (ID) que será vinculada ao lead. | Integer | Não | 10 | 
 | Data de Associação da Imobiliária ("data_associacao_imobiliaria") | Informa a data em que a imobiliária foi vinculada ao lead. | Datetime | Não | - | 
-| Corretor ("idcoretor") | Informa o corretor (ID) que será vinculado ao lead. | Integer | Não | 10 | 
+| Corretor ("idcorretor") | Informa o corretor (ID) que será vinculado ao lead. | Integer | Não | 10 | 
 | Data de Associação do Corretor ("data_associacao_corretor") | Informa a data em que o corretor foi vinculado ao lead. | Datetime | Não | - | 
 | Situação ("idsituacao") | Informa a situação (ID) do lead. | Integer | Não | 10 |
 | Responsável ("idusuario") | Informa o usuário administrativo que será vinculado ao lead como responsável. | Integer | Não | 10 | 
