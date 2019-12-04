@@ -57,6 +57,7 @@ Um lead não influencia nenhuma cadeia de funcionalidades.
 | Instagram ("instagram") | Informa perfil da rede social do cliente ou associado. | String | Não | 100 |
 | Avatar ("url_avatar") | Fornece a foto ou logo do cliente do lead. | String | não | 100 | Enviado através de URL.
 | Empreendimento ("idempreendimento") | Informa o(s) empreendimento(s) de interesse do lead. | Integer | Não | 10 | Pode ser enviado apenas um ID ou um array contendo vários IDs.
+| Permitir alteração ("permitir_alteracao":"true") | Permitite alterar / incluir informações no lead (Nome, e-mail, telefone e campos adicionais) caso o lead já exista cadastrado. | Boolean | Sim | - |
 | Ponto de Venda ("idpdv") | Informa o ponto de venda associado ao lead. | Integer | Não | 10 | Pode ser enviado apenas um ID.
 | Imobiliária ("idimobiliaria") | Informa a imobiliária (ID) que será vinculada ao lead. | Integer | Não | 10 | 
 | Data de Associação da Imobiliária ("data_associacao_imobiliaria") | Informa a data em que a imobiliária foi vinculada ao lead. | Datetime | Não | - | 
@@ -79,25 +80,13 @@ Um lead não influencia nenhuma cadeia de funcionalidades.
     "nome": "Nivaldo Oliva II",
     "email": "nivaldoolivasegundo@gmail.com",
     "telefone": "(79) 98833-0011",
-    "facebook": "https://pt-br.facebook.com/alfamaweb/",
-    "twitter": "https://twitter.com/alfamaweb",
-    "instagram": "https://www.instagram.com/alfamaweb",
-    "url_avatar": "https://alfamaweb.com.br/assets/img/logo_alfama_blog.png",
+    "permitir_alteracao":"true",
     "idempreendimento": 
     {
         "0":30
     },
-    "idpdv": "1",
-    "idimobiliaria": "3",
-    "data_associacao_imobiliaria": "01/02/2019",
-    "idcorretor": "87",
-    "data_associacao_corretor": "01/02/2019",
-    "idsituacao": "1",
-    "idusuario": "1",
-    "origem": "GO",
-    *"midia": "ads",
+    "origem": "SI",
     "conversao": "Campanha 2018.10.31",
-    "data_cad_conversao": "08/11/2018",
     "campos_adicionais": 
     {
         "possui_imoveis": "Sim"
