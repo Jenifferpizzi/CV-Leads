@@ -40,7 +40,6 @@ Um lead não influencia nenhuma cadeia de funcionalidades.
 **Exemplo:**
 ```sh
 {  
-    "email": "integracao@construtordevendas.com.br",
     "token": "2ed820f89afa16cabb6f1585f9a85b4e6bfc80c3"   
 }
 ```
