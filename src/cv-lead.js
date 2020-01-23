@@ -10,23 +10,6 @@ class cvLeads {
   }
   
   renderForm() {
-    let form = `<form class="cv-lead-form" method="post" id="cv-lead-form">
-                  <div class="item-form">
-                    <label for="nome">Nome</label>
-                    <input type="text" class="cv-lead-nome" name="nome" placeholder="Nome" required>
-                  </div>
-                    <div class="item-form">
-                    <label for="email">E-mail</label>
-                    <input type="email" class="cv-lead-email" name="email" placeholder="E-mail" required>
-                  </div>
-                  <div class="item-form">
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" name="telefone" class="cv-lead-telefone" placeholder="Telefone" onkeyup="masc(this, mtel);" maxlength="15" required>
-                  </div>        
-                  <button class="cv-lead-submit" type="submit">Enviar</button>
-                </form>`;
-
-    document.querySelector('#cv-leads').insertAdjacentHTML('beforeend', form);
     document.querySelector("#cv-lead-form").addEventListener("submit", (event) => {
        event.preventDefault();
        this.validateForm() ? this.submitForm(event) : false;
@@ -49,13 +32,15 @@ class cvLeads {
 
   utmHandler() {
     //http://www.example.com/?utm_source=adsite&utm_medium=origem&utm_campaign=campanhadoanuncio&utm_term=palavra-chavedoanuncio
-    var origem = formatOrigin(getParamsURL()['utm_source']);
-    var medium = formatMedium(getParamsURL()['utm_source'], getParamsURL()['utm_medium']);
+    const origem = formatOrigin(getParamsURL()['utm_source']);
+    const medium = formatMedium(getParamsURL()['utm_source'], getParamsURL()['utm_medium']);
     this.registerLocalStorage(origem, medium);
   }
 
   registerLocalStorage(origem, medium) {
       if(origem && medium) {
+        localStorage.removeItem('utm_source');
+        localStorage.removeItem('utm_medium');
         localStorage.setItem('utm_source', origem);
         localStorage.setItem('utm_medium', medium);
       }
@@ -66,7 +51,7 @@ class cvLeads {
     event.preventDefault();
     var form = new FormData(document.getElementById('cv-lead-form'));
     var formData = {
-      "acao": "salvar_editar",
+      "acao": "salvar",
       "permitir_alteracao": "true"
     };
     
@@ -77,8 +62,9 @@ class cvLeads {
     if(localStorage.getItem('utm_source') && localStorage.getItem('utm_medium')){  
       formData.origem = localStorage.getItem('utm_source');
       formData.midia = localStorage.getItem('utm_medium');
-  
     }
+
+    formData.conversao = document.getElementsByName("conversao")[0].value ? document.getElementsByName("conversao")[0].value : formData.origem;
 
     var data = JSON.stringify(formData);
     var formRequest = new XMLHttpRequest();
@@ -95,10 +81,8 @@ class cvLeads {
     formRequest.setRequestHeader("email", this.emailCV);
     formRequest.setRequestHeader("token", this.tokenCV);
     formRequest.send(data);
-	}
+  }
 }
-
-
 
 function getParamsURL(){
   var array = location.search.split('?').join('').split("&");
