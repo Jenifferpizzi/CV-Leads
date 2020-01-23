@@ -20,7 +20,7 @@ $dadosLead = json_encode($dadosLead);
 
 $cabecalho = array(
 	'email: ' . $usuario,
-	'cvhash: ' . $hash_senha,
+	'token: ' . $hash_senha,
 	'Content-Type: application/json',
 	'Content-Length: ' . strlen($dadosLead)
 );
