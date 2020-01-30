@@ -1,5 +1,3 @@
-const fields = ['nome', 'email', 'telefone'];
-
 class cvLeads {
   constructor(url, email, token) {
     this.urlCV = url;
@@ -12,23 +10,10 @@ class cvLeads {
   renderForm() {
     document.querySelector("#cv-lead-form").addEventListener("submit", (event) => {
        event.preventDefault();
-       this.validateForm() ? this.submitForm(event) : false;
+       this.submitForm(event);
     });
   }
-  
-  validateForm() {
-    var fieldname;
-    var i, l = fields.length;
 
-    for (i = 0; i < l; i++) {
-      fieldname = fields[i];
-      if (document.forms["cv-lead-form"][fieldname].value === "") {
-        alert("Preencha todos os campos!");
-        return false;
-      }
-    }
-    return true;
-  }
 
   utmHandler() {
     //http://www.example.com/?utm_source=adsite&utm_medium=origem&utm_campaign=campanhadoanuncio&utm_term=palavra-chavedoanuncio
@@ -110,6 +95,8 @@ function formatOrigin(origin) {
 
       case 'newsletter':
         return 'EM';
+      case 'instagram':
+        return 'FB';
   }
  }
 
