@@ -214,3 +214,5 @@ Ao cadastrar um lead pela API, pode ser enviado o campo “idpdv” no JSON da r
 Ao editar um lead pela API, pode ser enviado o campo “idpdv” no JSON da requisição. Caso seja enviado, as situações possíveis são: (1) se o PDV está associado à imobiliária do lead ou a algum empreendimento do lead, será cadastrado no lead, do contrário não; (2) caso não exista nem imobilária nem empreendimentos associados ao lead, o PDV será cadastrado no lead; (3) caso seja enviado o mesmo “idpdv” nada será alterado.
 
 Caso um PDV não possua associação com uma imobiliária nem com algum empreendimento, ele deverá ser exibido em todos os painéis.
+
+gtg
